@@ -11,7 +11,7 @@ def index():
     '''
     root page function that returns the index page and its data
     '''
-    title = "Welcome | One Minute Pitch"
+    title = "Welcome | Pitchaz"
 
     return render_template("index.html", title=title)
 
@@ -86,7 +86,7 @@ def home():
 
     all_pitches = Pitch.get_all_pitches()
 
-    title = 'Home | One Minute Pitch'    
+    title = 'Home | Pitchaz'    
     return render_template('home.html', title = title, pitch_form = pitch_form, pitches = all_pitches)
 
 @main.route('/pitch/<int:id>',methods = ['GET','POST'])
