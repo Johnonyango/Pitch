@@ -6,23 +6,23 @@ from ..models import User
 class RegistrationForm(FlaskForm):
     email = StringField('Your Email Address',validators=[Required(),Email()])
     username = StringField('Enter your username',validators = [Required()])
-    password = PasswordField('Password',validators = [Required(),EqualTo('password_confirm',message = 'Passwords must match')])
-    password_confirm = PasswordField('Confirm Passwords',validators = [Required()])
+    password = PasswordField('Password',validators = [Required(),EqualTo('password_confirm',message = 'no must match found for password')])
+    password_confirm = PasswordField('Confirm Password',validators = [Required()])
     submit = SubmitField('Sign Up')
 
     def validate_email(self,data_field):
         if User.query.filter_by(email = data_field.data).first():
-            raise ValidationError("There is an account with that email")
+            raise ValidationError("Account already exist")
 
     def validate_username(self,data_field):
         if User.query.filter_by(username = data_field.data).first():
-            raise ValidationError('That username is taken')
+            raise ValidationError('Username already taken')
 
 class LoginForm(FlaskForm):
     email = StringField('Your Email Address', validators=[Required(),Email()])
     password = PasswordField('Password', validators=[Required()])
     remember = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Log in')
 
 class ResetPassword(FlaskForm):
     email = StringField('Email', validators=[Required(), Email()])
