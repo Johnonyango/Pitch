@@ -74,6 +74,6 @@ def new_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash('Password has been reset successfull!')
+        flash('Password reset was successful!')
         return redirect(url_for('auth.login'))
     return render_template('auth/change_password.html',title='Reset Password',form=form)
