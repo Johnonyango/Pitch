@@ -9,7 +9,7 @@
                 {% if current_user.is_authenticated%}
                 <a id="start" class="btn btn-primary animated" href="{{url_for('main.home')}}">View Pitches</a>
                 {% else %}
-                <button class="btn btn-success"href="{{url_for('auth.login')}}" >LOG IN</button>
+                <button class="btn btn-success xl"href="{{url_for('auth.login')}}" >LOG IN</button>
                 <!-- <a id="start" class="btn btn-success animated" href="{{url_for('auth.login')}}">Log in</a> -->
                 {% endif %}
             </div>
