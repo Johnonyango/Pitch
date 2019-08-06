@@ -9,6 +9,7 @@ class Config:
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:123456@localhost/pitcha'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+    DATABASE_URL = 'heroku addons:create heroku-postgresql'
 
     MAIL_SERVER=os.environ.get('MAIL_SERVER')
     MAIL_PORT=os.environ.get('MAIL_PORT')
