@@ -8,7 +8,7 @@ class Config:
     DATABASE_PASS = os.environ.get('DATABASE_PASS')
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    DATABASE_URL = 'heroku addons:create heroku-postgresql'
+    # DATABASE_URL = 'heroku addons:create heroku-postgresql'
 
     MAIL_SERVER=os.environ.get('MAIL_SERVER')
     MAIL_PORT=os.environ.get('MAIL_PORT')
