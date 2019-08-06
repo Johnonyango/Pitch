@@ -7,9 +7,9 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DATABASE_PASS = os.environ.get('DATABASE_PASS')
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:123456@localhost/pitcha'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:123456@localhost/pitcha'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    DATABASE_URL = 'heroku addons:create heroku-postgresql'
+    # DATABASE_URL = 'heroku addons:create heroku-postgresql'
 
     MAIL_SERVER=os.environ.get('MAIL_SERVER')
     MAIL_PORT=os.environ.get('MAIL_PORT')
@@ -52,7 +52,7 @@ class TestConfig(Config):
         Config: The parent configuration class with general configuration settings
     '''
     DATABASE_PASS = os.environ.get('DATABASE_PASS')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:pasword@localhost/pitcha'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:pasword@localhost/pitcha'
 
 config_options = {
     'development':DevConfig,
